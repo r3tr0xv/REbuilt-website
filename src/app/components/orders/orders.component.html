@@ -1,0 +1,19 @@
+<div class="row" style="margin: 2%;">
+    <div class="col-sm-6 col-md-3 text-center" *ngFor="let s of mySales">
+      <div class="thumbnail">
+        <img style="height: 200px;" src="{{s.idProduct.image}}">
+        <hr>
+        <div class="caption">
+          <h2 style="font-size:large;color: #8a1226;"><i class="fa fa-laptop" aria-hidden="true"></i> {{s.idProduct.name}}</h2>
+          <h4 style="font-size:medium;color: #8a1226;"><i class="fa fa-diamond" aria-hidden="true"></i> {{s.idProduct.category}}</h4>
+          <h3 style="font-size:medium;color: #8a1226;"><i class="fa fa-usd" aria-hidden="true"></i> {{s.idProduct.price}}</h3>
+          <h4 style="color: rgb(49, 48, 48);"><i class="fa fa-map-marker" aria-hidden="true"></i> {{s.idProduct.region}}</h4>
+          <h4 style="color: rgb(49, 48, 48);"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{s.idBuyer.firstName | titlecase}} {{s.idBuyer.lastName | titlecase}}</h4>
+          <h4 [ngClass]="{'orange': s.status == 'unconfirmed','green' : s.status == 'confirmed','red': s.status == 'declined'}"> {{s.status | titlecase}}</h4>
+          <p>
+            <a class="btn btn-warning"  role="button" (click)="controlOrder(s._id)">check order</a>
+          </p>
+        </div>
+    </div>
+    </div>
+</div>

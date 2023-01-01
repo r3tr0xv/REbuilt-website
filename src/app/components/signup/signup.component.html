@@ -1,0 +1,135 @@
+<section>
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center" style="margin-top: 10%;margin-bottom:10%">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            Join Us today <br />
+            <span style="color:#D10024" class="text-primary">and become a seller / client in our network</span>
+          </h1>
+          <p style="color: hsl(217, 10%, 50.8%)">
+            Your best user friendly network <br>
+            for selling / buying used or new pc parts <br>
+            for your precious build or even full computers !
+          </p>
+        </div>
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <form [formGroup]="signupForm">
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="text" class="form-control" id="inputEmail4" placeholder="John"
+                      formControlName="firstName">
+                  <div
+                      *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].dirty || signupForm.controls['firstName'].touched)">
+                      <div *ngIf="signupForm.controls['firstName'].errors.required" class="text-danger">
+                          First Name is required
+                      </div>
+                     
+                          <div *ngIf="signupForm.controls['firstName'].errors.minlength"
+                              class="text-danger">
+                              First Name must have at least 3 characters
+                          </div>
+                  </div>
+                      <label class="form-label" for="firstName">First name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="text" placeholder="Doe" id="lastName" class="form-control"
+                        formControlName="lastName" />
+                      <label class="form-label" for="lastName">Last name</label>
+                      <div
+                        *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].dirty || signupForm.controls['lastName'].touched)">
+                        <div *ngIf="signupForm.controls['lastName'].errors.required" class="text-danger">
+                          Last Name is required
+                        </div>
+                        <div *ngIf="signupForm.controls['lastName'].errors.minlength" class="text-danger">
+                          Last Name must have at least 5 characters
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="email" placeholder="example@domain.com" id="email" class="form-control"
+                    formControlName="email" />
+                  <label class="form-label" for="email">Email address</label>
+                  <div
+                    *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)">
+                    <div *ngIf="signupForm.controls['email'].errors.required" class="text-danger">
+                      Email is required
+                    </div>
+
+                    <div *ngIf="signupForm.controls['email'].errors.email" class="text-danger">
+                      Invalid Email
+                    </div>
+                  </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="tel" placeholder="+216 11 222 333" id="tel" class="form-control"
+                    formControlName="tel" />
+                  <label class="form-label" for="tel">Phone Number</label>
+                  <div
+                    *ngIf="signupForm.controls['tel'].invalid && (signupForm.controls['tel'].dirty || signupForm.controls['tel'].touched)">
+                    <div *ngIf="signupForm.controls['tel'].errors.required" class="text-danger">
+                      Tel is required
+                    </div>
+
+                    <div *ngIf="signupForm.controls['tel'].errors.pattern" class="text-danger">
+                      Invalid Tel
+                    </div>
+                  </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="password" placeholder="************" id="password" class="form-control"
+                    formControlName="password" />
+                  <label class="form-label" for="password">Password</label>
+                  <div
+                    *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)">
+                    <div *ngIf="signupForm.controls['password'].errors.required" class="text-danger">
+                      Password is required
+                    </div>
+                    <div *ngIf="signupForm.controls['password'].errors.pattern" class="text-danger">
+                      Invalid Password
+                    </div>
+                  </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="password" placeholder="************" id="confirmPassword" class="form-control"
+                    formControlName="confirmPassword" />
+                  <label class="form-label" for="confirmPassword">Confirm Password</label>
+                  <div
+                    *ngIf="signupForm.controls['confirmPassword'].invalid && (signupForm.controls['confirmPassword'].dirty || signupForm.controls['confirmPassword'].touched)">
+                    <div *ngIf="signupForm.controls['confirmPassword'].errors.mustMatch" class="text-danger">
+                      Confirm Password must match password
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <select name="country" id="country" class="bg-light" formControlName="region">
+                    <option *ngFor="let region of regions" [ngValue]="region">
+                      {{ region }}
+                     </option>
+                  </select>
+                </div>
+                <label class="form-label" for="confirmPassword">Region</label>
+                <div class="text-danger">{{message}}</div>
+                <button (click)="signUp(signupForm.value)"
+                 type="submit" 
+                 class="btn btn-primary btn-block mb-4" 
+                 style="margin-top: 2%;color: #fff;
+                  background-color: #D10024;
+                  border-color: #c11733;">
+                  Sign up
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

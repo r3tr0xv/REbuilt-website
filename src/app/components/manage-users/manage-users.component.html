@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="text-center">Users dashbord</h3> 
+    </div>  
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Region</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <th scope="row">*</th>
+                <td>{{u.firstName}}</td>
+                <td>{{u.lastName}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.tel}}</td>
+                <td>{{u.region}}</td>
+                <td>
+                    <button type="button" class="btn btn-warning">Ban</button>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+  </div>

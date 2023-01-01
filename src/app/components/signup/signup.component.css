@@ -1,0 +1,10 @@
+select{
+    border: 1px solid rgb(204, 197, 197);
+    padding: 10px 20px;
+    border-radius:5px;
+    
+  }
+  
+  select:focus{
+    outline:none;
+  }

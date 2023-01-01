@@ -1,0 +1,48 @@
+<section>
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+      <div class="container">
+        <div class="row gx-lg-5 align-items-center" style="margin-top: 20%;margin-bottom:20%">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight">
+              Already One of us ?  <br />
+              <span style="color:#D10024" class="text-primary">Login to your space here !</span>
+            </h1>
+            <p style="color: hsl(217, 10%, 50.8%)">
+                    Your best user friendly network <br>
+                     for selling / buying used or new pc parts <br>
+                      for your precious build or even full computers !
+            </p>
+          </div>
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="card">
+              <div class="card-body py-5 px-md-5">
+                <form #loginForm="ngForm" (ngSubmit)="login()">
+                  <div class="form-outline mb-4">
+                    <input type="email" class="form-control" id="email"
+                    placeholder="example@domain.com"
+                    [(ngModel)]="user.email" [ngModelOptions]="{standalone : true}"/>
+                    <label class="form-label" for="email">Email address</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input [type]="changetype?'password':'text'" class="form-control" id="password"
+                    placeholder="************"
+                    [(ngModel)]="user.password" [ngModelOptions]="{standalone : true}" />
+                    <span class="eyeicon" (click)="viewpass()">
+                      <i [ngClass]="visible?'fa fa-eye':'fa fa-eye-slash'"></i>
+                    </span>
+                    <label class="form-label" for="form3Example4">Password</label>
+                  </div>
+                  <div class="text-danger">{{ msg }}</div>
+                  <button type="submit" class="btn btn-primary btn-block mb-4" style="margin-top: 2%;    color: #fff;
+                  background-color: #D10024;
+                  border-color: #c11733;">
+                    Login
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

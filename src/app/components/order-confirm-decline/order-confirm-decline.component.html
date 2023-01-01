@@ -1,0 +1,30 @@
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-push-2">
+                <div id="product-main-img">
+                    <div class="product-preview">
+                        <img src="{{myOrder.idProduct.image}}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2  col-md-pull-5">
+            </div>
+            <div class="col-md-5" style="margin-top: 7%;">
+                <div class="product-details">
+                    <h2 class="product-name"><i class="fa fa-laptop" aria-hidden="true"></i> {{myOrder.idProduct.name}}</h2>
+                    <h2 class="product-name"><i class="fa fa-map-marker" aria-hidden="true"></i> {{myOrder.idProduct.region}}</h2>
+                    <h3 class="product-price"><i class="fa fa-usd" aria-hidden="true"></i> {{myOrder.idProduct.price}}</h3>
+                    <h3 class="product-name">Buyer : </h3>
+                    <h2 class="product-name"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{myOrder.idBuyer.firstName}} {{myOrder.idBuyer.lastName}}</h2>
+                    <h2 class="product-name"><i class="fa fa-phone" aria-hidden="true"></i> {{myOrder.idBuyer.tel}}</h2>
+                    <div class="add-to-cart">
+                        <button class="add-to-cart-btn" style="margin-bottom: 2%;" (click)="confirm()"><i class="fa fa-check-circle"></i>Confirm order</button>
+                        <br>
+                        <button class="add-to-cart-btn" (click)="decline()"><i class="fa fa-times-circle"></i>Decline order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

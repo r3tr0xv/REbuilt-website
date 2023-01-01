@@ -1,0 +1,31 @@
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-push-2">
+                <div id="product-main-img">
+                    <div class="product-preview">
+                        <img src="{{myOrder.idProduct.image}}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2  col-md-pull-5">
+            </div>
+            <div class="col-md-5" style="margin-top: 7%;">
+                <div class="product-details">
+                    <h2 class="product-name"><i class="fa fa-laptop" aria-hidden="true"></i> {{myOrder.idProduct.name}}</h2>
+                    <h2 class="product-name"><i class="fa fa-map-marker" aria-hidden="true"></i> {{myOrder.idProduct.region}}</h2>
+                    <h3 class="product-price"><i class="fa fa-usd" aria-hidden="true"></i> {{myOrder.idProduct.price}}</h3>
+                    <h3 class="product-name">owner : </h3>
+                    <h2 class="product-name"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{myOrder.idOwner.firstName}} {{myOrder.idOwner.lastName}}</h2>
+                    <h2 class="product-name"><i class="fa fa-phone" aria-hidden="true"></i> {{myOrder.idOwner.tel}}</h2>
+                    <h2 class="product-price">Order : {{myOrder.status}}</h2>
+                    <br>
+                    <h3 class="product-price" style="font-size:medium"> Reason : sold out / insufficient stock !</h3>
+                    <div class="add-to-cart">
+                        <button class="add-to-cart-btn" (click)="cancel(myOrder._id)"><i class="fa fa-times-circle"></i>cancel order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

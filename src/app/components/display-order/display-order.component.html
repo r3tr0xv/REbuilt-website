@@ -1,0 +1,33 @@
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-push-2">
+                <div id="product-main-img">
+                    <div class="product-preview">
+                        <img src="{{myOrder.image}}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2  col-md-pull-5">
+            </div>
+            <div class="col-md-5" style="margin-top: 5%;">
+                <div class="product-details">
+                    <h2 class="product-name"><i class="fa fa-laptop" aria-hidden="true"></i> {{myOrder.name}}</h2>
+                    <h2 class="product-name"><i class="fa fa-map-marker" aria-hidden="true"></i> {{myOrder.region}}</h2>
+                    <h3 class="product-price"><i class="fa fa-usd" aria-hidden="true"></i> {{myOrder.price}}</h3>
+                    <h2 class="product-name"><i class="fa fa-user-circle-o" aria-hidden="true"></i> 
+                        {{myOrder.idOwner.firstName}} {{myOrder.idOwner.lastName}}</h2>
+                    <h2 class="product-name"><i class="fa fa-phone" aria-hidden="true"></i> {{myOrder.idOwner.tel}}</h2>
+                    <ul class="product-links" style="margin-bottom: 2%;">
+                        <li style="font-size:medium">Category :</li>
+                        <li><a href="#" style="font-size:medium">{{myOrder.category}}</a></li>
+                    </ul>
+                    <p><i class="fa fa-book" aria-hidden="true"></i> {{myOrder.description}}</p>
+                    <div class="add-to-cart">
+                        <button class="add-to-cart-btn" (click)="addOrder()"><i class="fa fa-shopping-cart"></i>Confirm order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

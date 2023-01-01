@@ -1,0 +1,61 @@
+    <!-- MAIN HEADER -->
+    <div id="header">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- LOGO -->
+                <div class="col-md-3">
+                    <div class="header-logo">
+                        <a class="nav-link" routerLink="" class="logo">
+                            <img src="assets/img/Rebuilt-Logo.png">
+                        </a>
+                    </div>
+                </div>
+                <!-- /LOGO -->
+
+                <!-- SEARCH BAR -->
+                <div class="col-md-6 text-center">
+                    <div class="header-search">
+                        <form #search="ngForm" (ngSubmit)="search()">
+                            <input style="border-radius: 40px 0px 0px 40px;" class="form-control" id="search-text" aria-describedby="search-text" 
+                            [(ngModel)]="searchText" class="input" placeholder="Search here">
+                            <button class="search-btn">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /SEARCH BAR -->
+
+                <!-- ACCOUNT -->
+                <div class="col-md-3 clearfix">
+                    <div class="header-ctn">
+                        <div>
+                            <a style="cursor:pointer" class="nav-link" (click)="navOrder()">
+                                <i class="fa fa-cart-plus"></i>
+                                <span>Your Orders</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a class="nav-link" routerLink="/addProduct">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>Sell a product</span>
+                            </a>
+                        </div>
+
+                        <!-- Menu Toogle -->
+                        <div class="menu-toggle">
+                            <a href="#" (click)="toggle()">
+                                <i class="fa fa-bars"></i>
+                                <span>Menu</span>
+                            </a>
+                        </div>
+                        <!-- /Menu Toogle -->
+                    </div>
+                </div>
+                <!-- /ACCOUNT -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- /MAIN HEADER -->

@@ -1,0 +1,21 @@
+<div class="row" style="margin: 2%;">
+    <div class="col-sm-6 col-md-3 text-center" *ngFor="let p of myproduct">
+      <div class="thumbnail">
+        <img style="height: 200px;" src="{{p.image}}">
+        <hr>
+        <div class="caption">
+          <h2 style="font-size:large;color: #8a1226;"><i class="fa fa-laptop" aria-hidden="true"></i> {{p.name}}</h2>
+          <h4 style="font-size:medium;color: #8a1226;"><i class="fa fa-diamond" aria-hidden="true"></i> {{p.category}}</h4>
+          <h3 style="font-size:medium;color: #8a1226;"><i class="fa fa-usd" aria-hidden="true"></i> {{p.price}}</h3>
+          <h4 style="color: rgb(49, 48, 48);"><i class="fa fa-map-marker" aria-hidden="true"></i> {{p.region}}</h4>
+          <h4 style="font-size:medium;color: rgb(49, 48, 48);"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+             {{p.idOwner.firstName}} {{p.idOwner.lastName}}</h4>
+          <h4 style="font-size:medium;color: rgb(49, 48, 48);"><i class="fa fa-phone" aria-hidden="true"></i> {{p.idOwner.tel}}</h4>
+          <p>
+            <a style="margin-right: 2%;" class="btn btn-warning" (click)="editProductNav(p._id)" role="button">edit</a> 
+            <a class="btn btn-danger" (click)="deleteProduct(p._id)" role="button">delete</a>
+          </p>
+        </div>
+    </div>
+    </div>
+</div>
